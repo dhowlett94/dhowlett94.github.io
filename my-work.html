@@ -7,6 +7,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+    <!--
+    var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
+    if (document.location.protocol == 'https:')
+    unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+    document.write('<script type="text/javascript" src="' + unityObjectUrl + '"></script>');
+    -->
+    </script>
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Dan Howlett Development</title>
 
@@ -22,23 +30,93 @@
     <![endif]-->
   </head>
   <body>
-    <nav class="navbar center navbar-default navbar-fixed-top">
-      <div class="navbar navbar-inner">
-        <a href="index.html"><p class="navbar-text">HOME</p></a>
-        <a href="about.html"><p class="navbar-text">ABOUT</p></a>
-        <a href="my-work.html"><p class="navbar-text">MY WORK</p></a>
-        <a href="contact.html"><p class="navbar-text">CONTACT</p></a>
-      </div>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                </button>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse navbar-inner">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html"><p class="navbar-text">HOME</p></a></li>
+                <li><a href="about.html"><p class="navbar-text">ABOUT</p></a></li>
+                <li><a href="my-work.html"><p class="navbar-text">MY WORK</p></a></li>
+                <li><a href="contact.html"><p class="navbar-text">CONTACT</p></a></li>
+            </ul>
+            </div>
+        </div>
     </nav>
-        <div class="container-fluid fullpage darkslategray">
+    <div class="content-section darkslategray">
+      <div class="container">
         <h1>What I've done</h1>
-        <p class="content-para">Some content.</p>    
+        <h2>Unity GameJam Game</h2>
+        <p class="content-para spaced">
+           For my final year Team Project module I've been working alongside 2 other programmers and several designers. As part of the module, we took part in a month long game jam where we were tasked to create any game we liked, but it had to be in some way related to Mars. The idea we came up with was the Elon Musk Terraforming Game! With a game style similar to <a href="http://orteil.dashnet.org/cookieclicker/">Cookie Clicker</a>, you have to terraform mars by clicking on the planet in order to earn money and buy more gadgets to help you terraform!
+        </p>
+        <div class="row spaced hidden-sm hidden-xs">
+          <div class="btn-group btn-group-justified" role="group" aria-label="Play Web Version">
+            <a id="webUnityGame" class="btn btn-default btn-lg" role="button">Play Web Version</a>
+          </div>
+        </div>
+        <div id="unityPlayer" class="hidden-sm hidden-xs">
+          <p class="lead">Please note that the Unity Web Player isn't supported in 64 bit Firefox, Microsoft Edge or newer versions (45+) of Chrome. If you're seeing this message, either the web player isn't installed or it isn't supported in your browser.</p>
+          <div class="missing">
+            <a id="installUnity" title="Unity Web Player. Install now!">
+              <img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+            </a>
+          </div>
+        </div> 
+        <div class="row spaced hidden-sm hidden-xs">
+          <div class="btn-group btn-group-justified" role="group" aria-label="Download Windows Version">
+            <a id="windowsUnityGame" class="btn btn-default btn-lg" role="button">Download Windows Version</a>
+          </div>
+        </div>
+        <div class="row bottom hidden-sm hidden-xs">
+          <div class="btn-group btn-group-justified" role="group" aria-label="View Image Gallery">
+            <a id="imagesUnityGame" class="btn btn-default btn-lg" role="button">Just show me some screenshots of the game</a>
+          </div>
+        </div>
+      </div>
+    </div>   
+    <div class="content-section white">
+      <div class="container">
+        <h2>Haxe/OpenFL/HaxeFlixel Game</h2>
+        <p class="content-para spaced">
+          With a number of different technologies out there now for cross-platform development, I wanted to learn a bit more about how it all works. For this, I decided to use Haxe/OpenFL/HaxeFlixel to create a simple Space Invaders type game where the player can customise the look of their ship which they use, along with various powerups, to fight off aliens. 
+        </p> 
+        <div class="row spaced hidden-sm hidden-xs">
+          <div class="btn-group btn-group-justified" role="group" aria-label="Play Web Version">
+            <a id="flashHaxeGame" class="btn btn-default btn-lg" role="button">Play Web Version (requires flash)</a>
+          </div>
+        </div>
+        <div class="row spaced hidden-sm hidden-xs">
+          <div class="btn-group btn-group-justified" role="group" aria-label="Download Windows Version">
+            <a id="windowsHaxeGame" class="btn btn-default btn-lg" role="button">Download Windows Version (non-flash)</a>
+          </div>
+        </div>
+        <div class="row bottom hidden-sm hidden-xs">
+          <div class="btn-group btn-group-justified" role="group" aria-label="View Image Gallery">
+            <a id="imagesHaxeGame" class="btn btn-default btn-lg" role="button">Just show me some screenshots of the game</a>
+          </div>
+        </div>
+      </div>
     </div>
-
+    <div class="content-section lightblue">
+      <div class="container">
+        <h2>Current Projects</h2>
+        <p class="content-para bottom">
+          For my Final Year Project, I am working to convert British Sign Language to speech. To do this, I am using a <a href="https://www.leapmotion.com/">Leap Motion</a> controller which performs the detection and tracking of the hands and then exposes that data via its API. This API data will be used with machine learning algorithms in order to accurately recognise the different signs. The application itself will be written in C# and to implement these machine learning algorithms, I will be using <a href="http://www.emgu.com/wiki/index.php/Main_Page">EmguCV</a> (a C# wrapper around the <a href="http://opencv.org/">OpenCV library</a>). I also intend to use a SQL Server database in order to store the data for the different signs. For the speech component of the system, I will be using a free text-to-speech library, most likely the Speech Synthesizer already built into the .NET framework.
+      </div>
+    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/core-script.js"></script>
+    <script type="text/javascript" src="js/unity-game-load.js"></script>
   </body>
 </html>
