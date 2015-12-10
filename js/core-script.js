@@ -1,24 +1,32 @@
+var haxeImagesShowing = false;
+var unityImagesShowing = false;
+
 $(document).ready(function(){
-    $('#flashHaxeGame').click(function(e) {
-        var parentElement = $(this).parent();
-        var flashGame = 
-        "<object type='application/x-shockwave-flash' data='games/haxe/flash/bin/ProjectEcho.swf' class='webPlayer' id='haxeWebPlayer'><param name='movie' value='../games/haxe/flash/bin/ProjectEcho.swf'/><param name='quality' value='high' /></object>"
-        //$(this).parent().after("<p style='display: none'>this is some nice text!</p>");
-        $(flashGame).insertAfter(parentElement).show('slow');
-    });
+
     $('#imagesHaxeGame').click(function(e) {
-        var parentElement = $(this).parent();
-        var haxeImages = 
-        "<iframe class='imgur-album' width='100%' height='600' frameborder='0' src='http://imgur.com/a/z0rnU/embed'></iframe>"
-        //$(this).parent().after("<p style='display: none'>this is some nice text!</p>");
-        $(haxeImages).insertAfter(parentElement).show('slow');
+        if(haxeImagesShowing === true)
+        {
+            $('#haxeImages').hide();
+            haxeImagesShowing = false;
+        }
+        else
+        {
+            $('#haxeImages').show();
+            haxeImagesShowing = true;
+        }
     });
-    $('#windowsHaxeGame').click(function(e) {
-        var parentElement = $(this).parent();
-        var haxeImages = 
-        "<iframe class='imgur-album' width='100%' height='600' frameborder='0' src='http://imgur.com/a/z0rnU/embed'></iframe>"
-        //$(this).parent().after("<p style='display: none'>this is some nice text!</p>");
-        $(haxeImages).insertAfter(parentElement).show('slow');
+
+    $('#imagesUnityGame').click(function(e) {
+        if(unityImagesShowing === true)
+        {
+            $('#unityImages').hide();
+            haxeImagesShowing = false;
+        }
+        else
+        {
+            $('#unityImages').show();
+            unityImagesShowing = true;
+        }
     });
 
 });
@@ -29,11 +37,6 @@ $("#contactForm").submit(function(event) {
     //<div class='webPlayer' id='haxeWebPlayer' style='display: none'></div>
 });
 
-
-function onFlashHaxeClick() {
-    alert("here");
-    $(this).after("<p>this is some nice text!</p>");
-}
 
 function submitForm(){
     // Initiate Variables With Form Content
