@@ -20,7 +20,7 @@ $(document).ready(function(){
         if(unityImagesShowing === true)
         {
             $('#unityImages').hide();
-            haxeImagesShowing = false;
+            unityImagesShowing = false;
         }
         else
         {
@@ -48,14 +48,11 @@ function submitForm(){
     $.ajax({
         type: "POST",
         url: "php/contactForm.php",
-        data: "name=" + name + "&email=" + email + "&subject" + subject + "&message=" + message,
+        data: "name=" + name + "&email=" + email + "&subject=" + subject + "&message=" + message,
         success : function(text){
             if (text == "success"){
                 formSuccess();
             }
-        },
-        error : function(text) {
-        	formSuccess();
         }
     });
 }
